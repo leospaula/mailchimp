@@ -1,0 +1,46 @@
+{
+  "name": "Mailchimp",
+  "app_id": "mailchimp",
+  "color": "#03363d",
+  "description": {
+    "pt_BR": "Mailchimp é um serviço on-line completo para e-mail marketing, ajudando no disparo de e-mails, na automatização de campanhas, segmentações de listas até relatórios completos de abertura de e-mail, descadastramento e muito mais.",
+    "en": "MailChimp is a comprehensive online email marketing service, which helps with sending emails, automating campaigns, segmentation of lists and full email opening reports, unsubscribing, and much more."
+	},
+  "website": "https://mailchimp.com/",
+  "signup_url": "https://login.mailchimp.com/signup/",
+  "api_base_uri": {
+    "production": {
+			"uri": "https://{data_center}.api.mailchimp.com/3.0",
+			"label": "Produção",
+			"default": true
+		}
+  },
+  "authentication": {
+    "type": "basic_auth",
+    "basic_auth_format": "anystring:{api_key}",
+    "fields": [
+      {
+        "name": "data_center",
+        "label": "Data Center",
+        "type": "text"
+      },
+      {
+        "name": "api_key",
+        "label": "Api Key",
+        "mapping": "api_key",
+        "type": "text"
+      }
+    ],
+    "tutorial": {
+      "link": {
+        "pt_BR": "Onde encontrar o token da API do Zendesk?",
+        "en": "Where to find Zendesk API token?"
+      },
+      "steps": [
+      ]
+    },
+    "ping_request": {
+    	"method_name": "/ping"
+  	}
+  }
+}
