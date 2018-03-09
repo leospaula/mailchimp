@@ -10,7 +10,7 @@
   "signup_url": "https://login.mailchimp.com/signup/",
   "api_base_uri": {
     "production": {
-			"uri": "https://{data_center}.api.mailchimp.com/3.0",
+			"uri": "https://{api_key.split('-')[1]}.api.mailchimp.com/3.0",
 			"label": "Produção",
 			"default": true
 		}
@@ -19,11 +19,6 @@
     "type": "basic_auth",
     "basic_auth_format": "anystring:{api_key}",
     "fields": [
-      {
-        "name": "data_center",
-        "label": "Data Center",
-        "type": "text"
-      },
       {
         "name": "api_key",
         "label": "Api Key",
