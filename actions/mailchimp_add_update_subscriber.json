@@ -1,0 +1,83 @@
+{
+	"name": {
+    "pt_BR": "Adicionar/Atualizar Assinante",
+    "en": "Add/update subscriber"
+  },
+  "action_key": "add_update_subscriber",
+  "description": {
+  	"pt_BR": "Adicionar/Atualizar Assinante",
+    "en": "Add/update subscriber"
+  },
+  "action_fields": {
+    "fields": [
+        {
+          "key": "list_id",
+          "name": {
+            "pt_BR": "lista id",
+            "en": "list id"
+          },
+          "description": {
+            "pt_BR": "O ID da Lista",
+            "en": "The ID of the list"
+          },
+          "label": { "pt_BR": "Lista ID", "en": "ID list" },
+          "placeholder": {
+            "pt_BR": "Selecione uma lista",
+            "en": "Select a list"
+          },
+          "required": true,
+          "visible": true,
+          "advanced": false,
+          "field_type": "dropdown",
+          "data_type": "string",
+          "not_include_field_in_request": true,
+          "list": {
+            "type": "remote",
+            "helper_method": "lists_list"
+          }
+        },
+        {
+            "key": "merge_fields.FNAME",
+            "name": { "pt_BR": "primeiro nome", "en": "first name" },
+            "description": {"pt_BR": "Primeiro Nome","en": "First Name"},
+            "required": false,
+            "visible": true,
+            "advanced": false,
+            "field_type": "custom",
+            "data_type": "string",
+            "max": 100
+        },
+        {
+            "key": "merge_fields.LNAME",
+            "name": { "pt_BR": "sobrenome", "en": "last name" },
+            "description": {"pt_BR": "Sobrenome","en": "Last Name"},
+            "required": false,
+            "visible": true,
+            "advanced": false,
+            "field_type": "custom",
+            "data_type": "string",
+            "max": 100
+        },
+        {
+            "key": "email_address",
+            "name": { "pt_BR": "email", "en": "email" },
+            "description": {
+                "pt_BR": "Email",
+                "en": "Email"
+            },
+            "required": true,
+            "visible": true,
+            "advanced": false,
+            "field_type": "custom",
+            "data_type": "string",
+            "max": 100
+        }
+    ]
+  },
+  "request": {
+    "method_name": "/lists/{list_id}/members/{member_hash}",
+    "json_api": true,
+    "verb": "put",
+    "error_fields" : ["errors"]
+  }
+}

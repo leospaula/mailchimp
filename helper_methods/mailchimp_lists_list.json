@@ -1,0 +1,19 @@
+{
+  "name": "lista das listas",
+  "helper_method_key": "lists_list",
+  "requests": [
+  	{
+      "method_name": "/lists",
+      "response_field": "lists",
+      "params": {},
+      "mapping": {
+        "label": {
+          "fields": ["name"]
+        },
+        "value": {
+          "field": "id"
+        }
+      }
+    }
+  ]
+}
