@@ -1,0 +1,19 @@
+{
+  "name": "lista dos merge fields",
+  "helper_method_key": "merge_fields_list",
+  "requests": [
+  	{
+      "method_name": "/merge-fields",
+      "response_field": "merge_fields",
+      "params": {},
+      "mapping": {
+        "label": {
+          "fields": ["name"]
+        },
+        "value": {
+          "field": "merge_id"
+        }
+      }
+    }
+  ]
+}

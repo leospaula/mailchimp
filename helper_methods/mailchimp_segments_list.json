@@ -1,0 +1,19 @@
+{
+  "name": "lista dos grupos",
+  "helper_method_key": "segments_list",
+  "requests": [
+  	{
+      "method_name": "/segments",
+      "response_field": "segments",
+      "params": {},
+      "mapping": {
+        "label": {
+          "fields": ["name"]
+        },
+        "value": {
+          "field": "id"
+        }
+      }
+    }
+  ]
+}

@@ -28,8 +28,8 @@
     ],
     "tutorial": {
       "link": {
-        "pt_BR": "Onde encontrar o token da API do Zendesk?",
-        "en": "Where to find Zendesk API token?"
+        "pt_BR": "Onde encontrar o token da API do Mailchimp?",
+        "en": "Where to find Mailchimp API token?"
       },
       "steps": [
       ]

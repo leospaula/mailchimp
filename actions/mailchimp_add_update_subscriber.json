@@ -17,10 +17,10 @@
             "en": "list id"
           },
           "description": {
-            "pt_BR": "O ID da Lista",
-            "en": "The ID of the list"
+            "pt_BR": "Lista",
+            "en": "List"
           },
-          "label": { "pt_BR": "Lista ID", "en": "ID list" },
+          "label": { "pt_BR": "Lista", "en": "List" },
           "placeholder": {
             "pt_BR": "Selecione uma lista",
             "en": "Select a list"
@@ -37,28 +37,6 @@
           }
         },
         {
-            "key": "merge_fields.FNAME",
-            "name": { "pt_BR": "primeiro nome", "en": "first name" },
-            "description": {"pt_BR": "Primeiro Nome","en": "First Name"},
-            "required": false,
-            "visible": true,
-            "advanced": false,
-            "field_type": "custom",
-            "data_type": "string",
-            "max": 100
-        },
-        {
-            "key": "merge_fields.LNAME",
-            "name": { "pt_BR": "sobrenome", "en": "last name" },
-            "description": {"pt_BR": "Sobrenome","en": "Last Name"},
-            "required": false,
-            "visible": true,
-            "advanced": false,
-            "field_type": "custom",
-            "data_type": "string",
-            "max": 100
-        },
-        {
             "key": "email_address",
             "name": { "pt_BR": "email", "en": "email" },
             "description": {
@@ -71,13 +49,45 @@
             "field_type": "custom",
             "data_type": "string",
             "max": 100
-        }
+        },
+        {
+          "key": "status_if_new",
+          "name": {
+            "pt_BR": "opt-in",
+            "en": "opt-in"
+          },
+          "description": {
+            "pt_BR": "Opt-in",
+            "en": "Opt-in"
+          },
+          "label": { "pt_BR": "Opt-in", "en": "Opt-in" },
+          "placeholder": {
+            "pt_BR": "Selecione",
+            "en": "Select"
+          },
+          "required": true,
+          "visible": true,
+          "advanced": false,
+          "field_type": "dropdown",
+          "data_type": "string",
+          "default": "subscribed",
+          "list": {
+            "type": "local",
+            "data": [
+                {"label": "Não", "value": "subscribed"},
+                {"label": "Sim", "value": "pending"},
+            ]
+          }
+        },
     ]
   },
   "request": {
     "method_name": "/lists/{list_id}/members/{member_hash}",
     "json_api": true,
     "verb": "put",
-    "error_fields" : ["errors"]
+    "error_fields" : ["errors"],
+    "custom_params": [
+      {"name": "member_hash", "value": "Digest::MD5.hexdigest(data[:email_address].downcase)"}
+    ],
   }
 }
