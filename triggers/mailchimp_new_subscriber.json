@@ -1,0 +1,40 @@
+{
+	"name": {
+  	"pt_BR": "novo assinante",
+    "en": "new subscriber"
+  },
+  "trigger_key": "new_subscriber",
+  "description": {
+  	"pt_br": "Para cada novo assinante",
+    "en": "For each new subscriber"
+  },
+  "trigger_fields": {
+    "type": "local",
+    "fields": []
+  }, 
+  "trigger_type": "rest_hook",
+  "webhook": {
+    "message_type": "object",
+    "idempotent": [
+      {
+        "type": "header",
+        "field": "X-Request-Id"
+      }
+    ],
+    "rest_hook_config": {
+      "create": {
+        "verb": "POST",
+        "method_name": "/lists/{list_id}/webhooks",
+        "params": {"events": {"subscribe" : true, "unsubscribe" : false, "profile" : false, "cleaned" : false, "upemail" : false, "campaign" : false}}
+      },
+      "delete": {
+        "verb": "DELETE",
+        "method_name": "/lists/{list_id}/webhooks/{id}"
+      },
+      "meta_params": {
+        "webhook_id": "id",
+        "webhook_url": "url"
+      }
+    }  
+  } 
+}

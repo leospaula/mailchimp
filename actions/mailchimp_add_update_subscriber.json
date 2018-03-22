@@ -79,6 +79,32 @@
             ]
           }
         },
+        {
+          "key": "interest_categorie_id",
+          "name": {
+            "pt_BR": "categoria de interesse id",
+            "en": "interest categorie id"
+          },
+          "description": {
+            "pt_BR": "Categoria de interesse",
+            "en": "Interest Categorie"
+          },
+          "label": { "pt_BR": "Categoria de interesse", "en": "Interest Categorie" },
+          "placeholder": {
+            "pt_BR": "Selecione",
+            "en": "Select"
+          },
+          "required": true,
+          "visible": true,
+          "advanced": false,
+          "field_type": "dropdown",
+          "data_type": "string",
+          "not_include_field_in_request": true,
+          "list": {
+            "type": "remote",
+            "helper_method": "interest_categorie_list"
+          }
+        }
     ]
   },
   "request": {

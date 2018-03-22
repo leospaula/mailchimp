@@ -1,0 +1,19 @@
+{
+  "name": "lista das categorias de interesse",
+  "helper_method_key": "interest_categorie_list",
+  "requests": [
+  	{
+      "method_name": "/lists/{list_id}/interest-categories",
+      "response_field": "categories",
+      "params": {},
+      "mapping": {
+        "label": {
+          "fields": ["title"]
+        },
+        "value": {
+          "field": "id"
+        }
+      }
+    }
+  ]
+}
