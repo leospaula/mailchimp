@@ -10,7 +10,68 @@
   },
   "trigger_fields": {
     "type": "local",
-    "fields": []
+    "fields": [
+      {
+        "key":"id",
+        "name":"ID",
+        "description":"ID.",
+        "field_type":"string"
+      },
+      {
+        "key":"email_address",
+        "name":"Email",
+        "description":"Email.",
+        "field_type":"string"
+      },
+      {
+        "key":"unique_email_id",
+        "name":"Identificação única do Email",
+        "description":"Identificação única do Email.",
+        "field_type":"string"
+      },
+      {
+        "key":"status",
+        "name":"Status",
+        "description":"Status.",
+        "field_type":"string"
+      },
+      {
+        "key":"email_type",
+        "name":"Tipo do Email",
+        "description":"Tipo do Email.",
+        "field_type":"string"
+      },
+      {
+        "key":"unsubscribe_reason",
+        "name":"Razão de cancelamento da assinatura",
+        "description":"Razão de cancelamento da assinatura.",
+        "field_type":"string"
+      },
+      {
+        "key":"stats.avg_open_rate",
+        "name":"Taxa de abertura média",
+        "description":"Taxa de abertura média.",
+        "field_type":"string"
+      },
+      {
+        "key":"stats.avg_click_rate",
+        "name":"Taxa de criques média",
+        "description":"Taxa de criques média.",
+        "field_type":"string"
+      },
+      {
+        "key":"timestamp_signup",
+        "name":"Data/Hora da assinatura",
+        "description":"Data/Hora da assinatura.",
+        "field_type":"date_time"
+      },
+      {
+        "key":"last_changed",
+        "name":"Data/Hora da última atualização",
+        "description":"Data/Hora da última atualização.",
+        "field_type":"date_time"
+      }
+    ]
   }, 
   "trigger_type": "rest_hook",
   "webhook": {
